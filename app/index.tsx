@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     position: 'absolute',
     top: 0,
-    zIndex: 1,
+    zIndex: 1
   },
   imagemTopo: {
     width: '100%',
@@ -84,7 +84,12 @@ const styles = StyleSheet.create({
     height: '83%',
     paddingHorizontal: 20,
     backgroundColor: '#FFF',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+    borderTopLeftRadius: 35,
+    borderTopRightRadius: 35,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 8,
   },
 }); 
