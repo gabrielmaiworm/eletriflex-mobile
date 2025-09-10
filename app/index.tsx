@@ -2,7 +2,7 @@ import 'react-native-reanimated';
 
 import { SvgComponent } from '@/components/SvgComponent';
 import { Stack } from 'expo-router';
-import { Image, SafeAreaView, StyleSheet, View } from 'react-native';
+import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 export default function InitialPage() {
 
@@ -15,7 +15,12 @@ export default function InitialPage() {
       />
       <View style={styles.whiteModal}>
         <View style={{ alignItems: 'center', marginTop: 40, marginBottom: 10 }}>
-          <SvgComponent variant="logo" width={150} height={150} />
+          <SvgComponent variant="logo" width={150} height={160} />
+        </View>
+        <Text style={styles.title}>Iniciar sessão</Text>
+        <View style={styles.linkContainer}>
+          <Text style={styles.subtitle}>Ainda não possui uma conta?</Text>
+          <Text style={styles.link}>Criar conta</Text>
         </View>
       </View>
       <View style={styles.imagemContainer}>
@@ -52,11 +57,24 @@ const styles = StyleSheet.create({
     height: '100%',
     maxWidth: 300,
   },
-  loadingText: {
-    fontSize: 16,
-    color: '#333',
-    textAlign: 'center',
-    marginTop: 20,
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#DA7013'
+  },
+  subtitle: {
+    fontSize: 14,
+    fontWeight: '400',
+    color: '#8F8F8F',
+  },
+  linkContainer: {
+    flexDirection: 'row',
+  },
+  link: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#E59B5A',
+    marginLeft: 10,
   },
   whiteModal: {
     position: 'absolute',
@@ -64,6 +82,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     height: '83%',
+    paddingHorizontal: 20,
     backgroundColor: '#FFF',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
