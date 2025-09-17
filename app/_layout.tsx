@@ -32,6 +32,10 @@ export default function RootLayout() {
     <>
       <Stack>
         <Stack.Screen name="index" />
+        <Stack.Screen name="register" />
+        <Stack.Screen name="register-type" />
+        <Stack.Screen name="register-address" />
+        <Stack.Screen name="register-documents" />
         <Stack.Screen name="+not-found" />
       </Stack>
       <SplashScreen isVisible={showSplash} />

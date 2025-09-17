@@ -12,7 +12,7 @@ export default function SplashScreen({ isVisible }: CustomSplashScreenProps) {
   return (
     <View style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
-      <SvgComponent variant='logo' width={280} height={140} />
+      <SvgComponent variant='logo' width={280} height={190} />
     </View>
   );
 }

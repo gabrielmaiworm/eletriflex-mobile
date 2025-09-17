@@ -1,8 +1,19 @@
 import 'react-native-reanimated';
 
+import ButtonPrimary from '@/components/ButtonPrimary';
+import Input from '@/components/Input';
 import { SvgComponent } from '@/components/SvgComponent';
-import { Stack } from 'expo-router';
-import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { router, Stack } from 'expo-router';
+import { Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
+function handleRegister() {
+  router.push('/register');
+}
+
+function handleSubmit() {
+  // Lógica para lidar com o envio do formulário
+  console.log('Formulário enviado');
+}
 
 export default function InitialPage() {
 
@@ -20,9 +31,37 @@ export default function InitialPage() {
         <Text style={styles.title}>Iniciar sessão</Text>
         <View style={styles.linkContainer}>
           <Text style={styles.subtitle}>Ainda não possui uma conta?</Text>
-          <Text style={styles.link}>Criar conta</Text>
+          <TouchableOpacity onPress={handleRegister} activeOpacity={0.7}>
+            <Text style={styles.link}>Criar conta</Text>
+          </TouchableOpacity>
+        </View>
+        <Input
+          variant="default"
+          placeholder="Email"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          style={{ marginTop: 30 }}
+        />
+        <Input
+          variant="password"
+          placeholder="Senha"
+          style={{ marginVertical: 20 }}
+        />
+        <ButtonPrimary 
+          title="Entrar"
+          backgroundColor="#E59B5A"
+          onPress={handleSubmit}
+        />
+        <TouchableOpacity activeOpacity={0.7}>
+          <Text style={{ color: '#E59B5A', fontSize: 16, fontWeight: '600', alignSelf: 'center', paddingTop: 30}}>Esqueci minha senha</Text>
+        </TouchableOpacity>
+        <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 30, marginBottom: 10 }}>
+          <View style={{ flex: 1, height: 1, backgroundColor: '#d3d3d3' }} />
+          <Text style={{ color: '#d3d3d3', fontSize: 14, fontWeight: '400', marginHorizontal: 16, fontStyle: 'italic' }}>Eletriflex</Text>
+          <View style={{ flex: 1, height: 1, backgroundColor: '#d3d3d3' }} />
         </View>
       </View>
+
       <View style={styles.imagemContainer}>
         <Image
           source={require('@/assets/images/image-01.png')}
